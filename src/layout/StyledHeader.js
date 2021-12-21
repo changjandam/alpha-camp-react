@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Hamburger from '../components/Hamburger';
 import Logo from '../components/Logo';
+import Navbar from '../components/navbar/Navbar';
 
 const Header = styled.header`
   height: 56px;
@@ -21,6 +22,7 @@ const StyledHeader = () => {
   return (
     <Header>
       <Hamburger />
+      <Navbar />
       <TopLogo />
     </Header>
   );
