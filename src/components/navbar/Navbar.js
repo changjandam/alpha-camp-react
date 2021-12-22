@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import NavbarUl from './NavbarUl';
+import NavbarFuncs from './NavbarFuncs';
 
 const Div = styled.div`
   position: absolute;
@@ -12,6 +13,7 @@ const Navbar = () => {
   return (
     <Div>
       <NavbarUl />
+      <NavbarFuncs />
     </Div>
   );
 };

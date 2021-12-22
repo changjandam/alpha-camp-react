@@ -21,7 +21,7 @@ const NavbarUl = () => {
   return (
     <Ul>
       {navLinks.map((item) => (
-        <NavbarItem linkHref={item.linkHref} linkName={item.linkName} />
+        <NavbarItem linkHref={item.linkHref} linkName={item.linkName} key={item.linkName}/>
       ))}
     </Ul>
   );

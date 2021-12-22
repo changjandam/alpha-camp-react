@@ -45,7 +45,7 @@ const Hamburger = () => {
   return (
     <Div>
       <input type='checkbox' id='hamburger' hidden />
-      <Label for='hamburger'>
+      <Label htmlFor='hamburger'>
         <Span></Span>
       </Label>
     </Div>
