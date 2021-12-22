@@ -5,6 +5,10 @@ const Div = styled.div`
   display: inline-block;
   width: 1.5rem;
   margin-left: 1rem;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const Label = styled.label``;
@@ -38,21 +42,35 @@ const Span = styled.span`
     width: 9px;
     top: 7px;
   }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const Input = styled.input`
   display: none;
 
   &:checked ~ div {
-    transform: scaleY(1);
+    @media screen and (max-width: 768px) {
+      transform: scaleY(1);
+      transition: all 0.5s ease-out;
+    }
   }
 
   &:checked ~ div {
-    ul,
-    div {
-      display: flex;
-      opacity: 1;
-      transition: all 0.2s linear 0.6s;
+    @media screen and (max-width: 768px)
+    {
+
+      ul, div {
+        display: flex;
+        opacity: 1;
+        transition: all 0.2s linear 0.6s;
+      }
+      
+      @media screen and (min-width: 768px) {
+        all: unset;
+      }
     }
   }
 `;

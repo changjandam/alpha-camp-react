@@ -15,7 +15,14 @@ const Ul = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+
+  @media screen and (min-width: 768px) {
+
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+  }
+`;
 
 const NavbarUl = () => {
   return (

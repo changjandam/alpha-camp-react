@@ -9,7 +9,10 @@ const Header = styled.header`
   align-items: center;
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 1440px;
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 const TopLogo = styled(Logo)`

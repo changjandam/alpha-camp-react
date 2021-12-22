@@ -20,6 +20,15 @@ const Li = styled.li`
   height: 4.5rem;
   width: 95%;
   border-bottom: 1px solid #dcdcdc;
+
+  @media screen and (min-width: 768px) {
+    all: unset;
+    margin: 5px;
+  }
+
+  @media screen and (min-width: 950px) {
+    margin: 1rem;
+  }
 `;
 
 const NavbarItem = (props) => {

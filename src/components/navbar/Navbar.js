@@ -7,13 +7,25 @@ const Div = styled.div`
   position: absolute;
   width: 100vw;
   top: 100%;
-  transition: all 0.5s ease-out;
   transform-origin: top;
   transform: scaleY(0);
   box-shadow: 0 2px 5px #cdcdcd;
   ul,
   div {
     opacity: 0;
+    @media screen and (min-width: 768px) {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    all: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+
   }
 `;
 
