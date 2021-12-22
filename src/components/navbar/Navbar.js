@@ -7,6 +7,14 @@ const Div = styled.div`
   position: absolute;
   width: 100vw;
   top: 100%;
+  transition: all 0.5s ease-out;
+  transform-origin: top;
+  transform: scaleY(0);
+  box-shadow: 0 2px 5px #cdcdcd;
+  ul,
+  div {
+    opacity: 0;
+  }
 `;
 
 const Navbar = () => {

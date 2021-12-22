@@ -7,8 +7,7 @@ const Div = styled.div`
   margin-left: 1rem;
 `;
 
-const Label = styled.label`
-`;
+const Label = styled.label``;
 const Span = styled.span`
   &,
   &:before,
@@ -30,7 +29,7 @@ const Span = styled.span`
     left: 0;
   }
 
-  &:before{
+  &:before {
     width: 20px;
     bottom: 7px;
   }
@@ -41,14 +40,33 @@ const Span = styled.span`
   }
 `;
 
+const Input = styled.input`
+  display: none;
+
+  &:checked ~ div {
+    transform: scaleY(1);
+  }
+
+  &:checked ~ div {
+    ul,
+    div {
+      display: flex;
+      opacity: 1;
+      transition: all 0.2s linear 0.6s;
+    }
+  }
+`;
+
 const Hamburger = () => {
   return (
-    <Div>
-      <input type='checkbox' id='hamburger' hidden />
-      <Label htmlFor='hamburger'>
-        <Span></Span>
-      </Label>
-    </Div>
+    <React.Fragment>
+      <Div>
+        <Label htmlFor='hamburger'>
+          <Span></Span>
+        </Label>
+      </Div>
+      <Input type='checkbox' id='hamburger' />
+    </React.Fragment>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CartIcon } from '../../svg/NavbarIcon';
 
 const Button = styled.button`
   border: none;
