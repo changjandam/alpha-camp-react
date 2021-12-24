@@ -1,16 +1,16 @@
 import styled from 'styled-components';
-import Hamburger from '../components/Hamburger';
-import Logo from '../components/Logo';
-import Navbar from '../components/navbar/Navbar';
+import Hamburger from '../Hamburger';
+import Logo from '../Logo';
+import Navbar from '../navbar/Navbar';
 
-const Header = styled.header`
+const StyledHeader = styled.header`
   height: 56px;
   display: flex;
   align-items: center;
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1080px;
   left: 50%;
   transform: translateX(-50%);
 `;
@@ -21,14 +21,14 @@ const TopLogo = styled(Logo)`
   transform: translateX(-50%);
 `
 
-const StyledHeader = () => {
+const Header = () => {
   return (
-    <Header>
+    <StyledHeader>
       <Hamburger />
       <Navbar />
       <TopLogo />
-    </Header>
+    </StyledHeader>
   );
 };
 
-export default StyledHeader;
+export default Header;

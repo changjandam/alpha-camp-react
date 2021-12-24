@@ -1,13 +1,14 @@
 import React from 'react';
 import { GlobalStyles } from './global';
-import StyledHeader from './layout/StyledHeader';
-
+import Header from './components/UI/Header';
+import Footer from './components/UI/Footer'
 
 function App() {
   return (
     <div className='App'>
       <GlobalStyles />
-      <StyledHeader />
+      <Header />
+      <Footer />
     </div>
   );
 }
