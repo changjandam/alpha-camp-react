@@ -1,7 +1,7 @@
 import React from 'react';
 import { GlobalStyles } from './global';
-import Header from './components/UI/Header';
-import Footer from './components/UI/Footer'
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer'
 
 function App() {
   return (

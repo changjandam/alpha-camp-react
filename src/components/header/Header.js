@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Hamburger from '../Hamburger';
+import Hamburger from './Hamburger';
 import Logo from '../Logo';
-import Navbar from '../navbar/Navbar';
+import Navbar from '../header/navbar/Navbar';
 
 const StyledHeader = styled.header`
   height: 56px;

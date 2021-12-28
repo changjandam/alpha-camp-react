@@ -21,6 +21,8 @@ const Ul = styled.ul`
     flex-direction: row;
     align-items: center;
     height: 100%;
+    width: 300px;
+    justify-content: space-between;
   }
 `;
 

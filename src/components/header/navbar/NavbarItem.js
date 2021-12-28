@@ -23,12 +23,12 @@ const Li = styled.li`
 
   @media screen and (min-width: 768px) {
     all: unset;
-    margin: 5px;
+    /* margin: 5px; */
   }
 
-  @media screen and (min-width: 950px) {
+  /* @media screen and (min-width: 950px) {
     margin: 1rem;
-  }
+  } */
 `;
 
 const NavbarItem = (props) => {

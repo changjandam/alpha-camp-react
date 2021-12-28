@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Logo from '../Logo';
-import CenterDiv from '../../layout/CenterDiv';
-import FooterSection from '../footer-section/FooterSection';
+import CenterDiv from '../layout/CenterDiv';
+import FooterSection from './footer-section/FooterSection'
 
 const StyledFooter = styled.footer`
   position: fixed;
@@ -10,6 +10,10 @@ const StyledFooter = styled.footer`
   width: 100%;
   height: 284px;
   background-color: #f6f7f8;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Div = styled(CenterDiv)`
@@ -88,20 +92,18 @@ const followUs = {
     },
   ],
 };
-;
-
 const Footer = () => {
   return (
     <StyledFooter>
       <Div>
         <StyledLogo />
         {footerSections.map((section) => (
-          <Section
-            title={section.sectionTitle}
-            items={section.sectionItems}
-          />
+          <Section title={section.sectionTitle} items={section.sectionItems} />
         ))}
-        <Section title={followUs.sectionTitle} items={followUs.sectionItems}></Section>
+        <Section
+          title={followUs.sectionTitle}
+          items={followUs.sectionItems}
+        ></Section>
       </Div>
     </StyledFooter>
   );

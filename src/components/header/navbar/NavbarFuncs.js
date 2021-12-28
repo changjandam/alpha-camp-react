@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import NavbarFunc from './NavbarFunc';
-import { CartIcon, DarkModeIcon, SearchIcon } from '../../svg/NavbarIcon';
+import { CartIcon, DarkModeIcon, SearchIcon } from '../../../svg/NavbarIcon';
 
 const funcs = [
   { name:'search', icon: SearchIcon(), handler: () => console.log('search icon clicked') },
