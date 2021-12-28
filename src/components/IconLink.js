@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Icon = ({ className, children, href }) => {
+const IconLink = ({ className, children, href }) => {
   return (
     <a href={href || '/'} className={className} >
       {children}
@@ -8,4 +8,4 @@ const Icon = ({ className, children, href }) => {
   );
 };
 
-export default Icon;
+export default IconLink;

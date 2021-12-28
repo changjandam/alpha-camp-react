@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import Icon from '../Icon';
+import IconLink from '../IconLink';
 import CenterDiv from '../layout/CenterDiv';
 import LogoSvg from '../../svg/LogoSvg';
 import FooterSection from './footer-section/FooterSection'
+import {FBIcon, IGIcon, WhatsAppIcon} from '../../svg/SocialMediaIcon'
+import FooterSectionSocialMedia from './footer-section/FooterSectionSocialMedia';
+
 
 const StyledFooter = styled.footer`
-  position: fixed;
-  bottom: 0;
+  position: relative;
   width: 100%;
   height: 284px;
   background-color: #f6f7f8;
@@ -21,7 +23,7 @@ const Div = styled(CenterDiv)`
   display: flex;
   justify-content: space-between;
 `;
-const StyledLogo = styled(Icon)`
+const StyledLogo = styled(IconLink)`
   align-self: center;
 `;
 const Section = styled(FooterSection)``;
@@ -93,6 +95,13 @@ const followUs = {
     },
   ],
 };
+
+const socialMedia = [
+  { href: '#', icon: FBIcon },
+  { href: '#', icon: IGIcon },
+  { href: '#', icon: WhatsAppIcon },
+];
+
 const Footer = () => {
   return (
     <StyledFooter>
@@ -106,7 +115,9 @@ const Footer = () => {
         <Section
           title={followUs.sectionTitle}
           items={followUs.sectionItems}
-        ></Section>
+        >
+          <FooterSectionSocialMedia media ={socialMedia} />
+        </Section>
       </Div>
     </StyledFooter>
   );
