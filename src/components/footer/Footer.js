@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Logo from '../Logo';
+import Icon from '../Icon';
 import CenterDiv from '../layout/CenterDiv';
+import LogoSvg from '../../svg/LogoSvg';
 import FooterSection from './footer-section/FooterSection'
 
 const StyledFooter = styled.footer`
@@ -20,7 +21,7 @@ const Div = styled(CenterDiv)`
   display: flex;
   justify-content: space-between;
 `;
-const StyledLogo = styled(Logo)`
+const StyledLogo = styled(Icon)`
   align-self: center;
 `;
 const Section = styled(FooterSection)``;
@@ -96,7 +97,9 @@ const Footer = () => {
   return (
     <StyledFooter>
       <Div>
-        <StyledLogo />
+        <StyledLogo>
+          <LogoSvg />
+        </StyledLogo>
         {footerSections.map((section) => (
           <Section title={section.sectionTitle} items={section.sectionItems} />
         ))}

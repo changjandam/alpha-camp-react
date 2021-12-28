@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Hamburger from './Hamburger';
-import Logo from '../Logo';
+import Icon from '../Icon';
+import Logosvg from '../../svg/LogoSvg'
 import Navbar from '../header/navbar/Navbar';
 
 const StyledHeader = styled.header`
@@ -15,7 +16,7 @@ const StyledHeader = styled.header`
   transform: translateX(-50%);
 `;
 
-const TopLogo = styled(Logo)`
+const TopLogo = styled(Icon)`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -26,7 +27,9 @@ const Header = () => {
     <StyledHeader>
       <Hamburger />
       <Navbar />
-      <TopLogo />
+      <TopLogo>
+        <Logosvg />
+      </TopLogo>
     </StyledHeader>
   );
 };
