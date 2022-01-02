@@ -13,7 +13,7 @@ export default function FooterSectionSocialMedia(props) {
     <Div>
       {props.media
         ? props.media.map((item) => (
-            <MediaIcon href={item.href}>{item.icon}</MediaIcon>
+            <MediaIcon href={item.href} key={item.id}>{item.icon}</MediaIcon>
           ))
         : ''}
     </Div>

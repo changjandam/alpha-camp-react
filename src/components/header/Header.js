@@ -14,6 +14,8 @@ const StyledHeader = styled.header`
   max-width: 1080px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 99;
+  background-color: white;
 `;
 
 const TopLogo = styled(IconLink)`

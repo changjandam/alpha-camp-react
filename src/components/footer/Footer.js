@@ -10,6 +10,7 @@ import FooterSectionSocialMedia from './footer-section/FooterSectionSocialMedia'
 
 const StyledFooter = styled.footer`
   position: relative;
+  bottom: 0;
   width: 100%;
   height: 284px;
   background-color: #f6f7f8;
@@ -97,9 +98,9 @@ const followUs = {
 };
 
 const socialMedia = [
-  { href: '#', icon: FBIcon },
-  { href: '#', icon: IGIcon },
-  { href: '#', icon: WhatsAppIcon },
+  { href: '#', icon: FBIcon, id: 1 },
+  { href: '#', icon: IGIcon, id: 2 },
+  { href: '#', icon: WhatsAppIcon, id: 3 },
 ];
 
 const Footer = () => {
@@ -110,13 +111,14 @@ const Footer = () => {
           <LogoSvg />
         </StyledLogo>
         {footerSections.map((section) => (
-          <Section title={section.sectionTitle} items={section.sectionItems} />
+          <Section
+            title={section.sectionTitle}
+            key={section.sectionTitle}
+            items={section.sectionItems}
+          />
         ))}
-        <Section
-          title={followUs.sectionTitle}
-          items={followUs.sectionItems}
-        >
-          <FooterSectionSocialMedia media ={socialMedia} />
+        <Section title={followUs.sectionTitle} items={followUs.sectionItems}>
+          <FooterSectionSocialMedia media={socialMedia} />
         </Section>
       </Div>
     </StyledFooter>

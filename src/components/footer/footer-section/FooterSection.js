@@ -17,7 +17,7 @@ const FooterSection = (props) => {
       <P>{props.title}</P>
       {props.items &&
         props.items.map((item) => (
-          <FooterSectionItem href={item.itemHref}>
+          <FooterSectionItem href={item.itemHref} key={item.itemName}>
             {item.itemName}
           </FooterSectionItem>
         ))}
