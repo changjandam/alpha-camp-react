@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CenterDiv from '../layout/CenterDiv';
+import Address from './Address';
 import Step from './Step';
 
 const Div = styled(CenterDiv)`
@@ -22,6 +23,7 @@ export default function Main() {
     <Div>
       <P>結帳</P>
       <Step />
+      <Address />
     </Div>
   );
 }
