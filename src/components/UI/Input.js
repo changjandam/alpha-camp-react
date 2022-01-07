@@ -10,8 +10,6 @@ const Label = styled.label`
   font-weight: bold;
 `;
 
-const Option = styled.option``;
-
 const typeSelector = (props) => {
   switch (props.tagType) {
     case 'input':
