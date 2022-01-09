@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Select, Input as ChakraInput, Box } from '@chakra-ui/react';
 import { IoMdArrowDropdown } from 'react-icons/io';
+import { useRef } from 'react';
 
 const Label = styled.label`
   color: #808080;
@@ -10,16 +11,20 @@ const Label = styled.label`
   font-weight: bold;
 `;
 
-const typeSelector = (props) => {
+const typeSelector = (props, value, setValue) => {
   switch (props.tagType) {
     case 'input':
       return (
         <ChakraInput
           id={props.id}
-          placeholder={props.placeholder}
           type={props.type}
           focusBorderColor='#f67599'
-          _placeholder={props.placeholder}
+          placeholder={props.placeholder}
+          inputMode={props.inputmode}
+          maxLength={props.maxLength}
+          value={value}
+          onChange={setValue}
+          pattern={props.pattern}
         />
       );
     case 'select':
@@ -28,7 +33,8 @@ const typeSelector = (props) => {
           icon={<IoMdArrowDropdown />}
           focusBorderColor='#f67599'
           w={props.w}
-          _placeholder={props.placeholder}
+          value={value}
+          onChange={setValue}
         >
           {props.options
             ? props.options.map((option) => (
@@ -40,15 +46,15 @@ const typeSelector = (props) => {
         </Select>
       );
     default:
-      return new Error();
+      throw new Error();
   }
 };
 
 export default function Input(props) {
   return (
-    <Box pr={props.pr} mb={'1rem'}>
+    <Box pl={props.pl} pr={props.pr} mb={'1rem'}>
       <Label htmlFor={props.id}>{props.title}</Label>
-      {typeSelector(props)}
+      {typeSelector(props, props.value, props.setValue)}
     </Box>
   );
 }

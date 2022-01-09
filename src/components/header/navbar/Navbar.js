@@ -10,6 +10,7 @@ const Div = styled.div`
   transform-origin: top;
   transform: scaleY(0);
   box-shadow: 0 2px 5px #cdcdcd;
+  background: white;
   ul,
   div {
     opacity: 0;

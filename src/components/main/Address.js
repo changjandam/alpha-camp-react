@@ -35,7 +35,9 @@ export default function Address() {
 
   return (
     <Box>
-      <Text m={'1rem'} fontSize={'1.5rem'} fontWeight={'700'}>寄送地址</Text>
+      <Text m={'1rem'} fontSize={'1.5rem'} fontWeight={'700'}>
+        寄送地址
+      </Text>
       <Form>
         <Grid templateColumns={'1fr 1fr'}>
           <Input

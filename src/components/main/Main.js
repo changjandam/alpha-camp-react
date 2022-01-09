@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import CenterDiv from '../layout/CenterDiv';
+import Step from './Step';
 import Address from './Address';
 import Transport from './Transport'
-import Step from './Step';
-import { Text } from '@chakra-ui/react';
+import Payment from './Payment';
+
 
 const Div = styled(CenterDiv)`
   display: flex;
@@ -27,7 +28,7 @@ export default function Main() {
     <Div>
       <P>結帳</P>
       <Step />
-      <Transport />
+      <Payment />
     </Div>
   );
 }
