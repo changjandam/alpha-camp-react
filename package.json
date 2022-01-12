@@ -2,7 +2,7 @@
   "name": "alpha-shop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/changjandam/alpha-shop-react",
+  "homepage": "https://changjandam.github.io/alpha-shop-react",
   "dependencies": {
     "@chakra-ui/react": "^1.7.4",
     "@emotion/react": "^11.7.1",
@@ -23,12 +23,12 @@
     "styled-components": "^5.3.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
