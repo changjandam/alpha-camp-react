@@ -5,6 +5,7 @@ import Step from './Step';
 import Address from './Address';
 import Transport from './Transport'
 import Payment from './Payment';
+import Cart from './Cart/Cart';
 
 
 const Div = styled(CenterDiv)`
@@ -29,6 +30,7 @@ export default function Main() {
       <P>結帳</P>
       <Step />
       <Payment />
+      <Cart />
     </Div>
   );
 }
