@@ -6,6 +6,7 @@ import Address from './Address';
 import Transport from './Transport'
 import Payment from './Payment';
 import Cart from './Cart/Cart';
+import StepButtons from './StepButtons';
 
 
 const Div = styled(CenterDiv)`
@@ -31,6 +32,7 @@ export default function Main() {
       <Step />
       <Payment />
       <Cart />
+      <StepButtons />
     </Div>
   );
 }

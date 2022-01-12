@@ -70,7 +70,7 @@ export default function Payment() {
   return (
     <Box>
       <Text m={'1rem'} fontSize={'1.5rem'} fontWeight={'700'}>
-        寄送地址
+        付款資訊
       </Text>
       <Form>
         <Input
