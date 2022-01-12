@@ -6,6 +6,7 @@ import { itemPhoto1, itemPhoto2 } from '../../../image';
 const ItemDiv = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-right: .5rem;
 `;
 
 const ItemImg = styled.img`
@@ -162,7 +163,8 @@ const Items = styled.div`
   display: grid;
   gap: 1rem;
   max-height: 240px;
-  overflow-y: scroll;
+  overflow: auto;
+
 `;
 
 const items = [

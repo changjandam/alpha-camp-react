@@ -16,14 +16,14 @@ const Bar = styled.div`
   border: 1px solid ${(props) => props.stepColor};
 `;
 
-export default function Step(props) {
+export default function Step({ step }) {
   return (
     <Div>
-      <Step1 stepColor={'#2A2A2A'} />
+      {step === 1 ? <Step1 step={step} /> : <StepDone />}
       <Bar stepColor={'#2A2A2A'} />
-      <Step2 stepColor={'#AFB1BD'} />
-      <Bar stepColor={'#AFB1BD'} />
-      <Step3 stepColor={'#AFB1BD'} />
+      {step === 3 ? <StepDone /> : <Step2 step={step} />}
+      <Bar stepColor={step > 1 ? '#2A2A2A' : '#AFB1BD'} />
+      <Step3 step={step} />
     </Div>
   );
 }

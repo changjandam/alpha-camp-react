@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import CenterDiv from '../layout/CenterDiv';
 import Step from './Step';
 import Address from './Address';
-import Transport from './Transport'
+import Transport from './Transport';
 import Payment from './Payment';
 import Cart from './Cart/Cart';
 import StepButtons from './StepButtons';
-
+import { useState } from 'react';
 
 const Div = styled(CenterDiv)`
   display: flex;
@@ -23,16 +23,28 @@ const P = styled.p`
   margin-bottom: 1.5rem;
 `;
 
-
+const formSelector = (step) => {
+  switch (step) {
+    case 1:
+      return <Address />;
+    case 2:
+      return <Transport />;
+    case 3:
+      return <Payment />;
+    default:
+      throw new Error('formSelector error');
+  }
+};
 
 export default function Main() {
+  const [step, setStep] = useState(1);
   return (
     <Div>
       <P>結帳</P>
-      <Step />
-      <Payment />
+      <Step step={step} />
+      {formSelector(step)}
       <Cart />
-      <StepButtons />
+      <StepButtons step={step} setStep={setStep} />
     </Div>
   );
 }
