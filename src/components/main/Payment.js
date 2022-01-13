@@ -7,6 +7,9 @@ import { useReducer } from 'react';
 
 const Form = styled.form`
   margin: 15px;
+  @media (min-width: 780px) {
+    margin: 0;
+  }
 `;
 
 export default function Payment() {

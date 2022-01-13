@@ -6,7 +6,7 @@ import { itemPhoto1, itemPhoto2 } from '../../../image';
 const ItemDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 `;
 
 const ItemImg = styled.img`
@@ -53,7 +53,6 @@ const ItemAmount = styled.p`
   font-weight: 500;
   font-size: 14px;
   text-align: center;
-
 `;
 
 const ItemPrice = styled.p`
@@ -101,15 +100,14 @@ const CartDiv = styled.div`
   display: block;
   margin: 1rem;
   padding: 1rem;
-
-  /* Neutrals/White */
-
   background: #ffffff;
-  /* Neutrals/Pale grey */
-
   border: 1px solid #f0f0f5;
   box-sizing: border-box;
   border-radius: 8px;
+  @media (min-width: 780px) {
+    grid-area: 2/8/5/13;
+    margin: 0px;
+  }
 `;
 
 const CartBar = styled.div`
@@ -164,7 +162,6 @@ const Items = styled.div`
   gap: 1rem;
   max-height: 240px;
   overflow: auto;
-
 `;
 
 const items = [

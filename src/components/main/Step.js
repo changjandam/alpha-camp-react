@@ -8,6 +8,10 @@ const Div = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+    @media (min-width: 780px) {
+      grid-area: 2/1/3/7;
+      margin: 0;
+    }
 `;
 const Bar = styled.div`
   width: 60px;

@@ -14,6 +14,14 @@ const Div = styled(CenterDiv)`
   flex-direction: column;
   position: relative;
   margin-top: 56px;
+  margin-bottom: 1rem;
+  @media (min-width: 780px) {
+    display: grid;
+    grid-template-columns: repeat(12, 65px);
+    grid-template-rows: 76px 32px 400px 70px;
+    gap: calc((100% - (65px * 12)) / 11);
+    margin-bottom: 120px;
+  }
 `;
 const P = styled.p`
   font-size: 24px;
@@ -21,6 +29,15 @@ const P = styled.p`
   margin-left: 1rem;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
+`;
+
+const FormDiv = styled.div`
+  width: 100%;
+  @media (min-width: 780px) {
+    grid-area: 3/1/4/7;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
 `;
 
 const formSelector = (step) => {
@@ -42,7 +59,7 @@ export default function Main() {
     <Div>
       <P>結帳</P>
       <Step step={step} />
-      {formSelector(step)}
+      <FormDiv>{formSelector(step)}</FormDiv>
       <Cart />
       <StepButtons step={step} setStep={setStep} />
     </Div>

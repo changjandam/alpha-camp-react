@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Select, Input as ChakraInput, Box } from '@chakra-ui/react';
 import { IoMdArrowDropdown } from 'react-icons/io';
-import { useRef } from 'react';
 
 const Label = styled.label`
   color: #808080;
@@ -52,7 +51,7 @@ const typeSelector = (props, value, setValue) => {
 
 export default function Input(props) {
   return (
-    <Box pl={props.pl} pr={props.pr} mb={'1rem'}>
+    <Box pl={props.pl} pr={props.pr} mb={'1rem'} gridArea={props.gridArea}>
       <Label htmlFor={props.id}>{props.title}</Label>
       {typeSelector(props, props.value, props.setValue)}
     </Box>

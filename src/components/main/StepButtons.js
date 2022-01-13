@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const Div = styled.div`
   margin-left: 1rem;
   margin-right: 1rem;
+  @media (min-width: 780px) {
+    grid-area: 4/1/5/7;
+    margin: 0;
+  }
 `;
 
 const Bar = styled.div`
@@ -11,12 +15,19 @@ const Bar = styled.div`
   margin-bottom: 1.5rem;
   width: 100%;
   border-top: 1px solid #e6e6eb;
+  @media (min-width: 780px) {
+    margin-top: 0;
+  }
 `;
 
-const ButtonDiv = styled.button`
+const ButtonDiv = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @media (min-width: 780px) {
+    justify-content: ${props=>props.step===1 && 'end'}
+  }
+
 `;
 
 const NextButton = styled.button`
@@ -29,6 +40,10 @@ const NextButton = styled.button`
   border-radius: 0.5rem;
   p {
     color: white;
+  }
+  @media (min-width: 780px) {
+    width: 174px;
+    
   }
 `;
 
@@ -85,7 +100,7 @@ export default function StepButtons({ step = 1, setStep }) {
   return (
     <Div>
       <Bar />
-      <ButtonDiv>
+      <ButtonDiv step={step}>
         {step === 1 ? (
           ''
         ) : (
