@@ -14,19 +14,18 @@ const Div = styled.div`
   ul,
   div {
     opacity: 0;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 780px) {
       opacity: 1;
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 780px) {
     all: unset;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     height: 100%;
     width: 100%;
-
   }
 `;
 

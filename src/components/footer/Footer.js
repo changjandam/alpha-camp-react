@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import IconLink from '../IconLink';
 import CenterDiv from '../layout/CenterDiv';
 import LogoSvg from '../../svg/LogoSvg';
-import FooterSection from './footer-section/FooterSection'
-import {FBIcon, IGIcon, WhatsAppIcon} from '../../svg/SocialMediaIcon'
+import FooterSection from './footer-section/FooterSection';
+import { FBIcon, IGIcon, WhatsAppIcon } from '../../svg/SocialMediaIcon';
 import FooterSectionSocialMedia from './footer-section/FooterSectionSocialMedia';
-
 
 const StyledFooter = styled.footer`
   position: relative;
@@ -15,7 +14,7 @@ const StyledFooter = styled.footer`
   height: 284px;
   background-color: #f6f7f8;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 780px) {
     display: none;
   }
 `;

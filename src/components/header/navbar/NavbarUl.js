@@ -16,8 +16,7 @@ const Ul = styled.ul`
   flex-direction: column;
   align-items: center;
 
-  @media screen and (min-width: 768px) {
-
+  @media screen and (min-width: 780px) {
     flex-direction: row;
     align-items: center;
     height: 100%;
@@ -30,7 +29,11 @@ const NavbarUl = () => {
   return (
     <Ul>
       {navLinks.map((item) => (
-        <NavbarItem linkHref={item.linkHref} linkName={item.linkName} key={item.linkName}/>
+        <NavbarItem
+          linkHref={item.linkHref}
+          linkName={item.linkName}
+          key={item.linkName}
+        />
       ))}
     </Ul>
   );

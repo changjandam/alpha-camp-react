@@ -64,7 +64,7 @@ export default function Address() {
             placeholder='請輸入姓名'
           />
           <Input
-            gridArea={isLargerThan780 ? 'auto/1/auto/4' : ''}
+            gridArea={isLargerThan780 ? 'auto/1/auto/4' : 'auto/1/auto/3'}
             tagType='input'
             id='tel'
             title='電話'
@@ -72,7 +72,7 @@ export default function Address() {
             placeholder='請輸入行動電話'
           />
           <Input
-            gridArea={isLargerThan780 ? 'auto/4/auto/7' : ''}
+            gridArea={isLargerThan780 ? 'auto/4/auto/7' : 'auto/1/auto/3'}
             tagType='input'
             id='email'
             title='Email'
@@ -80,7 +80,7 @@ export default function Address() {
             placeholder='請輸入電子郵件'
           />
           <Input
-            gridArea={isLargerThan780 ? 'auto/1/auto/3' : ''}
+            gridArea={isLargerThan780 ? 'auto/1/auto/3' : 'auto/1/auto/3'}
             tagType='select'
             id='city'
             title='縣市'
@@ -88,7 +88,7 @@ export default function Address() {
             placeholder='請選擇縣市'
           />
           <Input
-            gridArea={isLargerThan780 ? 'auto/3/auto/7' : ''}
+            gridArea={isLargerThan780 ? 'auto/3/auto/7' : 'auto/1/auto/3'}
             tagType='input'
             id='address'
             title='地址'

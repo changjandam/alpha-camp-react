@@ -6,7 +6,7 @@ const Div = styled.div`
   width: 1.5rem;
   margin-left: 1rem;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 780px) {
     display: none;
   }
 `;
@@ -43,7 +43,7 @@ const Span = styled.span`
     top: 7px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 780px) {
     display: none;
   }
 `;
@@ -52,23 +52,22 @@ const Input = styled.input`
   display: none;
 
   &:checked ~ div {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 780px) {
       transform: scaleY(1);
       transition: all 0.5s ease-out;
     }
   }
 
   &:checked ~ div {
-    @media screen and (max-width: 768px)
-    {
-
-      ul, div {
+    @media screen and (max-width: 780px) {
+      ul,
+      div {
         display: flex;
         opacity: 1;
         transition: all 0.2s linear 0.6s;
       }
-      
-      @media screen and (min-width: 768px) {
+
+      @media screen and (min-width: 780px) {
         all: unset;
       }
     }
