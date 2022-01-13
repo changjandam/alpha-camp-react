@@ -5,7 +5,7 @@ import { XMLParser } from 'fast-xml-parser';
 
 import Input from '../UI/Input';
 
-import { Grid, Box, Text, useMediaQuery, GridItem } from '@chakra-ui/react';
+import { Grid, Box, Text, useMediaQuery } from '@chakra-ui/react';
 
 const Form = styled.form`
   margin: 15px;
