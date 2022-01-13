@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/alpha-shop-react/static/js/main.95b44cc4.js",
+    "main.js": "/alpha-shop-react/static/js/main.6bde05df.js",
     "static/media/itemPhoto1.png": "/alpha-shop-react/static/media/itemPhoto1.91ff114636b054ca609e.png",
     "static/media/itemPhoto2.png": "/alpha-shop-react/static/media/itemPhoto2.caee6155f9c0941adcd1.png",
     "index.html": "/alpha-shop-react/index.html",
-    "main.95b44cc4.js.map": "/alpha-shop-react/static/js/main.95b44cc4.js.map"
+    "main.6bde05df.js.map": "/alpha-shop-react/static/js/main.6bde05df.js.map"
   },
   "entrypoints": [
-    "static/js/main.95b44cc4.js"
+    "static/js/main.6bde05df.js"
   ]
 }
