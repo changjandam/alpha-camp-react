@@ -14,18 +14,19 @@ const deliver = [
     method: '標準運送',
     time: '約3～7個工作天',
     cost: '免費',
-    value: 'standard',
+    value: 0,
   },
   {
     id: 2,
     method: 'DHL 貨運',
     time: '48小時內送達',
     cost: '$500',
-    value: 'DHL',
+    value: 500,
   },
 ];
 
-export default function Transport() {
+export default function Transport({ form, dispatchAction }) {
+  console.log(form);
   return (
     <Box>
       <Text m={'1rem'} fontSize={'1.5rem'} fontWeight={'700'}>
@@ -39,7 +40,9 @@ export default function Transport() {
               time={i.time}
               cost={i.cost}
               key={i.id}
-              value={i.value}
+              value={form.transport}
+              checked={i.value === form.transport}
+              setValue={() => dispatchAction({ ...form, transport: i.value })}
             />
           ))}
         </RadioGroup>

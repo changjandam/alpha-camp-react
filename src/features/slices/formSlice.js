@@ -21,6 +21,7 @@ export const formSlice = createSlice({
   initialState,
   reducers: {
     changeValue: (state, action) => {
+      console.log('work')
       state.value = action.payload;
     },
   },

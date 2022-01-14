@@ -38,8 +38,15 @@ const Radio = styled.input`
 export default function RadioButton(props) {
   return (
     <React.Fragment>
-      <Radio type='radio' id={props.value} name='transport' hidden></Radio>
-      <Label htmlFor={props.value}>
+      <Radio
+        type='radio'
+        id={props.value}
+        name='transport'
+        hidden
+        onChange={()=>{}}
+        checked={props.checked}
+      ></Radio>
+      <Label htmlFor={props.value} onClick={props.setValue}>
         <StyledFlex align={'center'} direction={'row'} h={'100%'} w={'100%'}>
           <Box>
             <Text fontSize={14}>{props.method}</Text>

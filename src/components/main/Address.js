@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { XMLParser } from 'fast-xml-parser';
-import { useSelector, useDispatch } from 'react-redux';
-import { changeValue } from '../../features/slices/formSlice';
 
 import Input from '../UI/Input';
 import { Grid, Box, Text, useMediaQuery } from '@chakra-ui/react';
@@ -19,11 +17,9 @@ const genderOptions = [
   { title: '女士', value: 'female' },
 ];
 
-export default function Address() {
+export default function Address({form, dispatchAction}) {
   const [counties, setCounties] = useState([]);
-  const form = useSelector((state) => state.form.value);
 
-  const dispatch = useDispatch();
 
   const getCounties = async () => {
     const parser = new XMLParser();
@@ -61,7 +57,7 @@ export default function Address() {
             pr={isLargerThan780 ? '' : '30'}
             value={form.gender}
             dispatch={(value) => {
-              dispatch(changeValue({ ...form, ...value }));
+              dispatchAction({ ...form, ...value });
             }}
           />
           <Input
@@ -72,7 +68,7 @@ export default function Address() {
             placeholder='請輸入姓名'
             value={form.name}
             dispatch={(value) => {
-              dispatch(changeValue({ ...form, ...value }));
+              dispatchAction({ ...form, ...value });
             }}
           />
           <Input
@@ -84,7 +80,7 @@ export default function Address() {
             placeholder='請輸入行動電話'
             value={form.phone}
             dispatch={(value) => {
-              dispatch(changeValue({ ...form, ...value }));
+              dispatchAction({ ...form, ...value });
             }}
           />
           <Input
@@ -96,7 +92,7 @@ export default function Address() {
             placeholder='請輸入電子郵件'
             value={form.email}
             dispatch={(value) => {
-              dispatch(changeValue({ ...form, ...value }));
+              dispatchAction({ ...form, ...value });
             }}
           />
           <Input
@@ -108,7 +104,7 @@ export default function Address() {
             placeholder='請選擇縣市'
             value={form.county}
             dispatch={(value) => {
-              dispatch(changeValue({ ...form, ...value }));
+              dispatchAction({ ...form, ...value });
             }}
           />
           <Input
@@ -119,7 +115,7 @@ export default function Address() {
             placeholder='請輸入地址'
             value={form.address}
             dispatch={(value) => {
-              dispatch(changeValue({ ...form, ...value }));
+              dispatchAction({ ...form, ...value });
             }}
           />
         </Grid>

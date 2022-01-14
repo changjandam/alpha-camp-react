@@ -8,6 +8,8 @@ import Payment from './Payment';
 import Cart from './Cart/Cart';
 import StepButtons from './StepButtons';
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeValue } from '../../features/slices/formSlice';
 
 const Div = styled(CenterDiv)`
   display: flex;
@@ -40,26 +42,30 @@ const FormDiv = styled.div`
   }
 `;
 
-const formSelector = (step) => {
+const formSelector = (step, form, dispatchAction) => {
   switch (step) {
     case 1:
-      return <Address />;
+      return <Address form={form} dispatchAction={dispatchAction} />;
     case 2:
-      return <Transport />;
+      return <Transport form={form} dispatchAction={dispatchAction} />;
     case 3:
-      return <Payment />;
+      return <Payment form={form} dispatchAction={dispatchAction} />;
     default:
       throw new Error('formSelector error');
   }
 };
 
 export default function Main() {
+  const form = useSelector((state) => state.form.value);
+  const dispatch = useDispatch();
+  const dispatchAction = (payload) => dispatch(changeValue(payload));
+
   const [step, setStep] = useState(1);
   return (
     <Div>
       <P>結帳</P>
       <Step step={step} />
-      <FormDiv>{formSelector(step)}</FormDiv>
+      <FormDiv>{formSelector(step, form, dispatchAction)}</FormDiv>
       <Cart />
       <StepButtons step={step} setStep={setStep} />
     </Div>
