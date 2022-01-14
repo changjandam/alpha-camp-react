@@ -10,7 +10,7 @@ const Label = styled.label`
   font-weight: bold;
 `;
 
-const typeSelector = (props, value, setValue) => {
+const typeSelector = (props) => {
   switch (props.tagType) {
     case 'input':
       return (
@@ -21,8 +21,10 @@ const typeSelector = (props, value, setValue) => {
           placeholder={props.placeholder}
           inputMode={props.inputmode}
           maxLength={props.maxLength}
-          value={value}
-          onChange={setValue}
+          value={props.value}
+          onChange={(e) => {
+            props.dispatch({ [props.id]: e.target.value });
+          }}
           pattern={props.pattern}
         />
       );
@@ -31,9 +33,13 @@ const typeSelector = (props, value, setValue) => {
         <Select
           icon={<IoMdArrowDropdown />}
           focusBorderColor='#f67599'
+          id={props.id}
           w={props.w}
-          value={value}
-          onChange={setValue}
+          value={props.value}
+          onChange={(e) => {
+            console.log(e.target.value);
+            props.dispatch({ [props.id]: e.target.value });
+          }}
         >
           {props.options
             ? props.options.map((option) => (
@@ -45,7 +51,6 @@ const typeSelector = (props, value, setValue) => {
         </Select>
       );
     default:
-      throw new Error();
   }
 };
 
@@ -53,7 +58,7 @@ export default function Input(props) {
   return (
     <Box pl={props.pl} pr={props.pr} mb={'1rem'} gridArea={props.gridArea}>
       <Label htmlFor={props.id}>{props.title}</Label>
-      {typeSelector(props, props.value, props.setValue)}
+      {typeSelector(props)}
     </Box>
   );
 }
