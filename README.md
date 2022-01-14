@@ -1,6 +1,6 @@
 # 電商切版練習
 
-![screenshot-changjandam github io-2022 01 12-22_19_44](https://user-images.githubusercontent.com/7892298/149163847-e5fad789-89f0-40b0-a590-3de42cf83f50.png)
+![screenshot-changjandam github io-2022 01 13-23_22_48](https://user-images.githubusercontent.com/7892298/149358992-f217cac2-99fe-49f0-9b08-f13de87595bc.png)
 
 [gitHub-Pages 連結](https://changjandam.github.io/alpha-shop-react/)
 
