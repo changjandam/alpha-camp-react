@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   value: {
-    gender: 'female',
+    gender: 'male',
     name: '',
     phone: '',
     email: '',
-    county: '',
+    county: '臺北市',
     address: '',
     transport: 0,
     cardName: '',
@@ -21,7 +21,6 @@ export const formSlice = createSlice({
   initialState,
   reducers: {
     changeValue: (state, action) => {
-      console.log('work')
       state.value = action.payload;
     },
   },
