@@ -37,7 +37,6 @@ const typeSelector = (props) => {
           w={props.w}
           value={props.value}
           onChange={(e) => {
-            console.log(e.target.value);
             props.dispatch({ [props.id]: e.target.value });
           }}
         >

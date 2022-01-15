@@ -1,100 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
 import styled from 'styled-components';
 import { itemPhoto1, itemPhoto2 } from '../../../image';
-
-const ItemDiv = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-right: 0.5rem;
-`;
-
-const ItemImg = styled.img`
-  width: 100px;
-  height: 100px;
-`;
-
-const ItemInfoDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-between;
-`;
-
-const ItemName = styled.p`
-  font-family: Noto Sans TC;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
-  /* identical to box height, or 150% */
-
-  text-align: right;
-
-  color: #2a2a2a;
-`;
-
-const ItemCountDiv = styled.div`
-  display: flex;
-  width: 116px;
-  justify-content: space-between;
-  align-items: baseline;
-`;
-
-const ItemButton = styled.button`
-  background: #f0f0f5;
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-`;
-
-const ItemAmount = styled.p`
-  font-family: Inter;
-  font-weight: 500;
-  font-size: 14px;
-  text-align: center;
-`;
-
-const ItemPrice = styled.p`
-  font-family: Nunito Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 22px;
-  /* identical to box height, or 137% */
-
-  text-align: right;
-
-  color: #000000;
-`;
-
-const CartItem = ({ name, price, imgSrc }) => {
-  const [amount, setAmount] = useState(1);
-
-  return (
-    <ItemDiv>
-      <ItemImg src={imgSrc} />
-      <ItemInfoDiv>
-        <ItemName>{name}</ItemName>
-        <ItemCountDiv>
-          <ItemButton
-            onClick={() => setAmount((prev) => prev - 1)}
-            disabled={amount === 0 ? true : false}
-          >
-            -
-          </ItemButton>
-          <ItemAmount>{amount}</ItemAmount>
-          <ItemButton onClick={() => setAmount((prev) => prev + 1)}>
-            +
-          </ItemButton>
-        </ItemCountDiv>
-        <ItemPrice>
-          ${price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-        </ItemPrice>
-      </ItemInfoDiv>
-    </ItemDiv>
-  );
-};
+import { useSelector, useDispatch } from 'react-redux';
+import { addItem, subtractItem } from '../../../features/slices/cartSlice';
+import CartItem from './CartItem';
 
 const CartDiv = styled.div`
   display: block;
@@ -162,15 +71,32 @@ const Items = styled.div`
   gap: 1rem;
   max-height: 240px;
   overflow: auto;
+  @media (min-width: 780px) {
+    max-height: 350px;
+  }
 `;
 
 const items = [
   {
+    id: 1,
     name: '破壞補丁修身牛仔褲',
     price: 3999,
     imgSrc: itemPhoto1,
   },
   {
+    id: 2,
+    name: '刷色直筒牛仔褲',
+    price: 1299,
+    imgSrc: itemPhoto2,
+  },
+  {
+    id: 3,
+    name: '破壞補丁修身牛仔褲',
+    price: 3999,
+    imgSrc: itemPhoto1,
+  },
+  {
+    id: 4,
     name: '刷色直筒牛仔褲',
     price: 1299,
     imgSrc: itemPhoto2,
@@ -178,17 +104,38 @@ const items = [
 ];
 
 export default function Cart() {
+  const cartItems = useSelector((state) => state.cart.items);
+
+  const dispatch = useDispatch();
+
+  const total = cartItems.reduce(
+    (prev, curr) =>
+      prev.amount * items.find((i) => i.id === prev.id).price +
+      curr.amount * items.find((i) => i.id === curr.id).price
+  );
+
   return (
     <CartDiv>
       <Items>
-        {items.map((i) => (
-          <CartItem {...i} key={i.name} />
-        ))}
+        {cartItems.map((i) => {
+          return (
+            <CartItem
+              {...items.find((item) => item.id === i.id)}
+              key={i.id}
+              add={() => dispatch(addItem({ id: i.id }))}
+              subtract={() => dispatch(subtractItem({ id: i.id }))}
+              amount={i.amount}
+            />
+          );
+        })}
       </Items>
       <CartBar />
       <Info title='運費' value='免費' />
       <CartBar />
-      <Info title='小計' value='$5,298' />
+      <Info
+        title='小計'
+        value={'$' + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+      />
     </CartDiv>
   );
 }

@@ -59,7 +59,6 @@ export default function Main() {
   const form = useSelector((state) => state.form.value);
   const dispatch = useDispatch();
   const dispatchAction = (payload) => dispatch(changeValue(payload));
-  console.log(form)
   const [step, setStep] = useState(1);
   return (
     <Div>

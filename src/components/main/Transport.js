@@ -26,7 +26,6 @@ const deliver = [
 ];
 
 export default function Transport({ form, dispatchAction }) {
-  console.log(form);
   return (
     <Box>
       <Text m={'1rem'} fontSize={'1.5rem'} fontWeight={'700'}>
