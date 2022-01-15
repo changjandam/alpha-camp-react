@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { itemPhoto1, itemPhoto2 } from '../../../image';
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem, subtractItem } from '../../../features/slices/cartSlice';
+import {
+  addItem,
+  subtractItem,
+  setTotal,
+} from '../../../features/slices/cartSlice';
 import CartItem from './CartItem';
 
 const CartDiv = styled.div`
@@ -105,37 +109,45 @@ const items = [
 
 export default function Cart() {
   const cartItems = useSelector((state) => state.cart.items);
+  const total = useSelector((state) => state.cart.total);
 
   const dispatch = useDispatch();
 
-  const total = cartItems.reduce(
-    (prev, curr) =>
-      prev.amount * items.find((i) => i.id === prev.id).price +
-      curr.amount * items.find((i) => i.id === curr.id).price
-  );
+  useEffect(() => {
+    let total = 0;
+
+    for (let i = 0; i < cartItems.length; i++) {
+      total +=
+        cartItems[i].amount *
+        items.find((item) => item.id === cartItems[i].id).price;
+    }
+    dispatch(setTotal({ total }));
+  }, [cartItems, dispatch]);
 
   return (
-    <CartDiv>
-      <Items>
-        {cartItems.map((i) => {
-          return (
-            <CartItem
-              {...items.find((item) => item.id === i.id)}
-              key={i.id}
-              add={() => dispatch(addItem({ id: i.id }))}
-              subtract={() => dispatch(subtractItem({ id: i.id }))}
-              amount={i.amount}
-            />
-          );
-        })}
-      </Items>
-      <CartBar />
-      <Info title='運費' value='免費' />
-      <CartBar />
-      <Info
-        title='小計'
-        value={'$' + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-      />
-    </CartDiv>
+    total !== 0 && (
+      <CartDiv>
+        <Items>
+          {cartItems.map((i) => {
+            return (
+              <CartItem
+                {...items.find((item) => item.id === i.id)}
+                key={i.id}
+                add={() => dispatch(addItem({ id: i.id }))}
+                subtract={() => dispatch(subtractItem({ id: i.id }))}
+                amount={i.amount}
+              />
+            );
+          })}
+        </Items>
+        <CartBar />
+        <Info title='運費' value='免費' />
+        <CartBar />
+        <Info
+          title='小計'
+          value={'$' + total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+        />
+      </CartDiv>
+    )
   );
 }

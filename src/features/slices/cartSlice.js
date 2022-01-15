@@ -6,6 +6,7 @@ const initialState = {
     { id: 1, amount: 1 },
     { id: 2, amount: 1 },
   ],
+  total: 0
 };
 
 export const cartSlice = createSlice({
@@ -24,9 +25,12 @@ export const cartSlice = createSlice({
       item.amount -= 1;
       state.items = items.filter((i) => i.amount > 0);
     },
+    setTotal:(state,{payload}) => {
+      state.total = payload.total;
+    }
   },
 });
 
-export const { addItem, subtractItem } = cartSlice.actions;
+export const { addItem, subtractItem, setTotal } = cartSlice.actions;
 
 export default cartSlice.reducer;
