@@ -26,13 +26,5 @@
 - styled-components
 - Chakra UI
 
-## 預計進行
 
-1. 使用redux進行表單與購物車狀態管理
-2. 使用firebase練習API串接和資料保留
-3. 使用styled-component或是Chakra UI的theme解決辦法實作dark mode
-4. 使用react form hook重構表單
-5. 完成桌面版排版
-
-待發想
 
